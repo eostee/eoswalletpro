@@ -12468,7 +12468,7 @@ $("#loginbut").on('click', function() {
 
 							}
 			}
-		}，'jsonp');
+		}，'json');
 		/*$.post('/login', {pubkeys: pub, account: account}, function(data) {
 			if (data.login) {
 				console.log(pub);
