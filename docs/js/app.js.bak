@@ -12441,7 +12441,7 @@ $("#loginbut").on('click', function() {
 			$("#error-account").text("Error - Due to the new Dawn 4.2.0 standard, account names must now be exactly 12 characters long");
 			toggleHide("#error-account", true);
 		} else {*/
-		$.post('https://eoswalletpro.com/getkeyaccount', {pubkey: pub}, function(data){
+		$.post('/getkeyaccount', {pubkey: pub}, function(data){
 			if (data.accounts) {
 				let account_arr = data.accounts;
 				toggleHide("#account-pick-box", true);
