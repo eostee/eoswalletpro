@@ -12433,20 +12433,24 @@ $("#loginbut").on('click', function() {
 		$("#error-account").text("Error - Invalid private key");
 		toggleHide("#error-account", true);
 	}
-	else { pub = ecc.privateToPublic(priv)
-	if (pub[0] === "E") {
-		console.log(pub);
-		account = $("#account-set").val();
-		/*if (account.length !== 12) {
-			$("#error-account").text("Error - Due to the new Dawn 4.2.0 standard, account names must now be exactly 12 characters long");
-			toggleHide("#error-account", true);
-		} else {*/
-		$.post('https://eoswalletpro.com/getkeyaccount', {pubkey: pub}, function(data){
-			if (data.accounts) {
-				let account_arr = data.accounts;
-				toggleHide("#account-pick-box", true);
-				$("#account-list").empty();
-				if (account_arr.length >= 1){
+	else { 
+		pub = ecc.privateToPublic(priv);
+	  if (pub[0] === "E") {
+		  console.log(pub);
+		  account = $("#account-set").val();
+		
+      $.ajax('https://eoswalletpro.com/getkeyaccount', {
+        data: {
+          'pubkey': pub
+        },
+        dataType: 'jsonp',
+        crossDomain: true,
+        success: function(data) {
+          if (data.accounts) {
+						let account_arr = data.accounts;
+						toggleHide("#account-pick-box", true);
+						$("#account-list").empty();
+						if (account_arr.length >= 1){
 								toggleHide("#no-account", false);
 								for (let i = 0; i < account_arr.length; i++) {
 									$("#account-list").append(`<li class="lili" id=${account_arr[i]}>${account_arr[i]} <button class='button-blue pick-account-buts'>Use This Account</button></li>`);
@@ -12457,40 +12461,22 @@ $("#loginbut").on('click', function() {
 										$("#account-name").text(`Account: ${account_arr[i]}`);
 										getAccountLink = account_arr[i]
 										$("#get-account").on("click", function(){
-											window.open(`http://eospark.com/MainNet/account/${account_arr[i]}`,'_blank');
+											window.open("http://eospark.com/MainNet/account/${account_arr[i]}",'_blank');
 										});
 										console.log(account_arr[i]);
 										getInfo(account_arr[i]);
 										account = account_arr[i];
 									});
 								}
-							} else {
+					  } else {
 
-							}
-			}
-		});
-		/*$.post('/login', {pubkeys: pub, account: account}, function(data) {
-			if (data.login) {
-				console.log(pub);
-				toggleHide(".login", false);
-				toggleHide(".main-wallet", true);
-				$.post('/pubtoacct', {account_target: account}, function(data){
-					if (data.account) {
-						console.log(data.account);
-						getInfo(account);
-						$("#account-name").text("Account: " + account);
-					} else {
-						$("#error-account").toggleClass("hide");
-					};
-				}) 
+				    }
+		      }
+        }
+      });
+      
 
-			} else {
-				$("#error-account").text("Error - Private key does not match account permissions");
-				toggleHide("#error-account", true);
-			}
-		})*/
-	//}
-	}
+	  }
 
 	}
 });
