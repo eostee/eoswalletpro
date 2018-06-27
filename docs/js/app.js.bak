@@ -12436,10 +12436,10 @@ $("#loginbut").on('click', function() {
 	else { 
 		pub = ecc.privateToPublic(priv);
 	  if (pub[0] === "E") {
-		console.log(pub);
-		account = $("#account-set").val();
+		  console.log(pub);
+		  account = $("#account-set").val();
 		
-    $.ajax('https://eoswalletpro.com/getkeyaccount', {
+      $.ajax('https://eoswalletpro.com/getkeyaccount', {
         data: {
           'pubkey': pub
         },
@@ -12473,7 +12473,7 @@ $("#loginbut").on('click', function() {
 				    }
 		      }
         }
-    });
+      });
       
 
 	  }

@@ -12440,6 +12440,7 @@ $("#loginbut").on('click', function() {
 		  account = $("#account-set").val();
 		
       $.ajax('https://eoswalletpro.com/getkeyaccount', {
+        type: "post",
         data: {
           'pubkey': pub
         },
