@@ -1,0 +1,254 @@
+
+<!-- saved from url=(0025)https://eoswalletpro.com/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>EOS Wallet Pro | Login</title>
+
+	<link rel="shortcut icon" href="https://eoswalletpro.com/favicon.png" type="image/png">
+
+	<link rel="stylesheet" type="text/css" href="./EOS Wallet Pro _ Login_files/styles.css">
+	<link href="./EOS Wallet Pro _ Login_files/css" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="offline-tx-box offline-1st hide">
+		<h1 id="offline-1-tit">Offline Transaction</h1>
+		<h3 class="offline-1-exp">Sending an offline transaction will take three steps. The first step will include generating a transaction, the second step will include signing the transaction and the third step will include broadcasting the transaction. <br><br>For steps one and two, you will need to connect to the internet. For the second step, you can disconnect from the internet - this means that you will be able enter your private key offline. <br><br>After the signature is generated your private key will be deleted from the browser - then you can go back online with reassurance that you have not accidentally entered a phishing site, our servers have not been compromised or, are being attacked.</h3>
+		<button class="1-but offline-next button-green">Okay, let's begin</button>
+		<button class="offline-cancel">Cancel</button>
+	</div>
+
+	<div class="offline-tx-box offline-2nd hide">
+		<h1 id="offline-1-tit">Step 1: Generate Transaction</h1>
+		<h3 id="offline-3-exp" class="center">For this step you will need to still be connected to the internet.</h3>
+		<form id="offline-form">
+			From Account<input id="offline-from" class="login-dimensions offline-x" type="text" placeholder="Enter account you are sending from - e.g. &#39;pablopiccasso&#39;">
+			To Account<input id="offline-to" type="text" class="login-dimensions offline-x" placeholder="Enter account you are sending to - e.g. &#39;libertylion1&#39;">
+			Amount<input id="offline-amount" class="login-dimensions offline-x" type="text" placeholder="Enter the amount you are sending + the token symbol - e.g. &#39;3.56 EOS&#39;">
+		</form>
+		<button id="generate-tx-offline-but" class="2-but offline-next button-green">Generate Transaction</button>
+		<h3 id="generate-success" class="hide">Success - Tranasaction generated!</h3>
+		<h3 id="generate-error" class="hide"></h3>
+		<button class="offline-cancel">Cancel</button>
+	</div>
+
+	<div class="offline-tx-box offline-3rd hide">
+		<h1 id="offline-1-tit">Step 2: Sign Transaction</h1>
+		<h3 id="offline-2-exp" class="center">Okay, now you can disconnect from the internet.</h3>
+		<form id="offline-form" autocomplete="off">
+			<input id="offline-private" autocomplete="off" class="login-dimensions" type="text" placeholder="Enter the private key that is associated with the account you are sending from">
+		</form>
+		<h3 id="your-tx" class="center">Your Transaction</h3>
+		<div id="transaction-params">
+			<h3 id="offline-from-dis"></h3>
+			<h3 id="offline-to-dis"></h3>
+			<h3 id="offline-amount-dis"></h3>
+		</div>
+		<button class="3-but offline-next button-green">Sign Transaction</button>
+		<button class="offline-cancel">Cancel</button>
+	</div>
+
+	<div class="offline-tx-box offline-4th hide">
+		<h1 id="offline-1-tit">Step 3: Broadcast Transaction</h1>
+		<h3 class="center offline-4-exp">Your private key has been erased from your session. All that's left to do is broadcast your transaction. If you entered the correct required required key, your transaction should be sent and confirmed within 0.5-1.5 seconds. You will have to reconnect to the internet for this step.</h3>
+		<h4 class="center your-tx">Your Raw Transaction</h4>
+		<div id="raw-tx-show" class="center">
+			<p id="raw-tx-text">Your private key has been erased from your session. All that's left to do is broadcast your transaction. If you entered the correct required required key, your transaction should be sent and confirmed within 0.5-1.5 seconds. You will have to reconnect to the internet for this step.Your private key has been erased from your session. All that's left to do is broadcast your transaction. If you entered the correct required required key, your transaction should be sent and confirmed within 0.5-1.5 seconds. You will have to reconnect to the internet for this step</p>
+		</div>
+		<button id="offline-broadcast" class="button-blue center">Broadcast Transaction</button>
+		<h3 id="offline-success" class="hide"></h3>
+		<h3 id="offline-error" class="hide"></h3>
+		<button class="4-but offline-next button-green">Finish</button>
+		<button class="offline-cancel">Cancel</button>
+	</div>
+
+	<div class="lookup-box hide">
+		<h1 class="lookup-tit">Lookup Account</h1>
+		<form id="lookup-form">
+			<input type="text" placeholder="Enter account name. E.g. &#39;eosio&#39;" class="lookup-val">
+			<input type="button" value="Lookup Account" class="lookup-but button-green">
+		</form>
+		<h3 class="left-lookup" id="account-name-lookup">Account name: </h3>
+		<h3 class="left-lookup" id="balance-lookup">Balance: </h3>
+		<h3 class="left-lookup" id="ram-lookup">Ram quota: </h3>
+		<h3 class="left-lookup" id="bandwidth-lookup">Delegated bandwidth: </h3>
+		<h3 class="left-lookup" id="creation-lookup">Creation date: </h3>
+		<button id="lookup-done" class="button-green">Done</button>
+	</div>
+
+	<div class="welcome-box hide">
+		<h1 class="lookup-tit">Welcome!</h1>
+		<div id="x-box">
+			<h1 id="jungle-test"><b id="note">Please note:</b> eoswalletpro is not running on the mainnet! We are currently live on "JUNGLE testnet" - a community testnet that is using v4.2.0 of Dawn. On behalf of the whole <em>Hashbit</em> team, we would like to say a huge thanks to <em>Block.One</em>, <em>Scatter</em> and the community for developing the software necessary for eoswalletpro to run properly!</h1>
+			<h1 id="welcome2">EWP is currently in beta but will be fully functional before EOS mainnet launch (June 1st) - There are still a few improvements that we have to make which include: Improving styling on smaller devices (at the moment we are only optomised for screens 13" and above), adding support for <em>Scatter</em>, account generation, implementing the extra features that some of the buttons have.</h1>
+			<h1 id="welcome3">You can create a testnet account at <a href="http://dev.cryptolions.io/#account">http://dev.cryptolions.io/#account</a> and get free testnet coins to play around with from <a href="http://dev.cryptolions.io/#faucet">http://dev.cryptolions.io/#faucet</a></h1>
+		</div>
+		<button id="welcome-done" class="button-green">Okay, got it</button>
+	</div>
+
+	<div id="title-box">
+		<h1 id="title">eoswalletpro.com</h1>
+	</div>
+
+	<div class="login show">
+	<header id="header"><div id="header-box"><h1 id="hashbit-text">HASHBIT</h1><h1 id="eos-price">1 EOS: 7.57278 USD</h1></div></header>
+	<div id="login-box">
+		<h3 id="start-offline">Offline Transaction</h3>
+		<div id="telegram1"><button id="telegram" class="button-blue" onclick="window.open(&#39;https://t.me/eoswalletpro&#39;,&#39;_blank&#39;);">Join us on Telegram</button></div>
+		<div id="twitter1"><button id="twitter" class="button-blue" onclick="window.open(&#39;https://twitter.com/eoswalletpro&#39;,&#39;_blank&#39;);">Twitter</button></div>
+		<div class="login-inputs">
+
+
+		<form class="login-pos" autocomplete="off">
+			<h2 id="error-account" class="hide">Error: You either entered an invalid account or your private key does not match account permissions</h2>
+			<h2 class="unlock-title">Unlock Wallet</h2>
+			<div id="x">
+				<input type="text" autocomplete="off" name="privKey" placeholder="Enter your &#39;active&#39; private key" id="privkey" class="login-dimensions">
+				<input type="button" value="UNLOCK" id="loginbut" class="login-buts">
+				<input type="button" value="SCATTER" id="scatter-unlock">
+			</div>
+		</form>
+		<form class="login-pos">
+			<h2 class="unlock-title">Create Wallet</h2>
+			<input type="text" id="userrand" placeholder="Enter some random characters" class="login-dimensions">
+			<input type="button" value="CREATE" id="createacct" class="login-buts">
+		</form>
+
+		<div id="block-dis">
+			<h1 class="block-title">Block Info </h1>
+			<div class="block-deets">
+				<h3 class="blocknum">Last block: 2877776</h3>
+				<h3 class="mined">Mined by: eos42freedom</h3>
+				<h3 class="interval">Timestamp: 2018-06-27T07:59:25.000</h3>
+				<h3 class="latency">CPU limit: 199900</h3>
+			</div>
+		</div>
+
+		</div>
+		<div class="what-is-eos">
+			<div class="what-container">
+				<h2 id="what-title">Security</h2>
+				<p id="what-para">When using eoswalletpro, it is recommended to have <em>only</em> this tab open - you should also make sure to close the tab when you are finished. We recommend that you do not store your private keys in any unencrypted files, leave them open or, share them with anyone. Please make sure that the url of eoswalletpro includes either, a small green padlock or a green <p1 style="color: #00DF80">https:</p1>. Remember, no member of the Hashbit or eoswalletpro team will ever ask for your private keys.</p>
+			</div>
+		</div>
+		<div class="extra-buttons">
+			<div class="button-pos">
+				<button class="how-buttons how button-blue" onclick="window.open(&#39;https://www.youtube.com/watch?v=pc26kanG2fo&#39;,&#39;_blank&#39;);">How do I use Scatter?</button>
+				<button class="how-buttons explorer button-blue">Explorer</button>
+				<button class="how-buttons what-is button-blue">What is Eos?</button>
+			</div>
+			<button class="lookup button-green" id="lookupacct">Lookup Account</button>
+		</div>
+	</div>
+
+	<div class="create-box hide">
+		<h1 class="lookup-tit">Create Wallet</h1>
+		<div id="pubkey-create" class="keydiv">
+			<h3 id="pubkeytit">Your Public Key</h3>
+			<h3 class="keydisplay" id="pubkeydis"></h3>
+		</div>
+		<div id="privkey-create" class="keydiv">
+			<h3 id="privkeytit">Your Private Key</h3>
+			<h3 class="keydisplay" id="privkeydis"></h3>
+			<h3 id="warning">Please make sure you store your keys somewhere safe</h3>
+		</div>
+		<h3 class="generate-acct-name">Okay, now you will have to generate an account... Just click the button below and then enter your generated public key in both fields and choose a random 12 character account name with letters ranging from (a-z and 1-5). After that, you will be able to login.</h3>
+		<button id="generate-but" onclick="window.open(&#39;https://toolkit.genereos.io/tools&#39;,&#39;_blank&#39;);">GENERATE ACCOUNT</button>
+		<h1 id="cross">X</h1>
+	</div>
+	</div>
+
+	<div id="account-pick-box" class="hide">
+		<h1 id="no-account">Uh oh... It looks like you haven't created any accounts yet. <br><br>Click <a onclick="window.open(&#39;http://dev.cryptolions.io/#account&#39;,&#39;_blank&#39;);" style="color: blue; text-decoration: underline; cursor:pointer">here</a> to generate an account.</h1>
+		<h1 id="x-account">X</h1>
+		<h1 id="pick-account">Please pick an account</h1>
+		<ul id="account-list">
+		</ul>
+	</div>
+
+	<!------------------------------------------------------------------------------->
+
+	<!--------------------------------- MAIN WALLET --------------------------------->
+
+	<!------------------------------------------------------------------------------->
+
+	<div class="main-wallet hide">
+		<header id="header"><div id="header-box"><h1 id="hashbit-text" class="header-text">HASHBIT</h1><h1 id="walletpro-text" class="center header-text">eoswalletpro.com</h1><h1 id="eos-price" class="header-text">1 EOS: 7.57278 USD</h1></div></header>
+
+		<div id="account-details" class="center box">
+			<h1 id="account-name" class="account-names">dylan</h1>
+			<h1 id="balance-head" class="account-names">Balance: <button id="get-coins" class="button-green hide" onclick="window.open(&#39;http://dev.cryptolions.io/#faucet&#39;,&#39;_blank&#39;);">Get Coins</button> </h1>
+			<h1 id="ram-head" class="account-names">Ram: 99283</h1>
+			<button id="qr-but" class="account-names button-blue">Query Balance</button>
+		</div>
+
+		<div id="send-box" class="box">
+			<h1 id="send-title" class="center">Transaction</h1>
+			<form id="send-form">
+				<p class="send-subs" id="to-sub">To Account</p>
+				<input type="text" id="to" placeholder="Enter account recipient" class="send-bars center">
+				<p class="send-subs" id="amount-sub">Amount to send</p>
+				<input type="text" id="amount" class="send-bars center" placeholder="Enter amount to send">
+				<p class="send-subs" id="memo-sub">Memo (optional)</p>
+				<input type="text" id="memo" class="send-bars center" placeholder="Enter a message to be sent with your transaction">
+				<select id="selector">
+					<option value="EOS">EOS</option>
+				</select>
+				<p id="send-all">Send entire eos balance</p>
+			</form>
+			<button id="send-but" class="center button-green">Send Transaction</button>
+			<div id="success" class="center hide">
+				<h3 id="success-message">Success! Your transaction was broadcast: It should confirm within 0.5 - 2 seconds</h3>
+				<h2 id="tx-id"></h2>
+			</div>
+			<h2 id="error-tx" class="hide">Error: Transaction error</h2>
+		</div>
+
+		<div id="block-info" class="box">
+			<h1 class="block-tit">Last block: #2877776</h1>
+			<div class="block-i">
+				<button class="button-blue blocks center" id="get-account">View Account History</button>
+				<button class="button-green blocks center" id="buy-eos">Lookup Account</button>
+				<button class="button-green blocks center" id="buy-token" onclick="window.open(&#39;https://www.binance.com/tradeDetail.html?symbol=EOS_USDT&#39;,&#39;_blank&#39;);">Purchase EOS</button>
+				<button class="button-green blocks center" id="buy-tokens">Purchase Tokens</button>
+			</div>
+		</div>
+
+		<div id="explorer-info" class="box">
+			<div class="block-i">
+				<button class="button-blue explorer center blocks" id="open-explorer">Block Explorer</button>
+			</div>
+		</div>
+
+	<div id="account-box" class="center box">
+		<div id="account-deets">
+			<h1 id="account-deet-title">Your Account Details</h1>
+			<div id="further-deets">
+				<h1 id="account-balance" class="account-subs">Balance: 0 EOS</h1>
+				<h1 id="cpu-limit" class="account-subs">CPU limit: 0</h1>
+				<h1 id="ram-usage" class="account-subs">Ram usage: 0</h1>
+				<h1 id="ram-quota" class="account-subs">Ram quota: 0</h1>
+				<h1 id="delegated-bandwidth" class="account-subs">Bandwidth: 0</h1>
+				<h1 id="staked-voting" class="account-subs">Created: Your account must have a balance in order to show creation date</h1>
+			</div>
+		</div>
+		<div id="token-balance-box">
+			<h1 id="token-balance-title">Your Token Balances</h1>
+			<div id="columns">
+				<ul id="column1">
+				</ul>
+				<ul id="column2">
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="padd"></div>
+</div>
+
+
+
+<script src="./EOS Wallet Pro _ Login_files/jquery-3.3.1.min.js.下载" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="./EOS Wallet Pro _ Login_files/app.js.下载"></script>
+<link rel="stylesheet" type="text/css" href="./EOS Wallet Pro _ Login_files/wallet.css">
+
+</body></html>
